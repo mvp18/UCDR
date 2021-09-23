@@ -1,6 +1,6 @@
 ## UCDR
 
-[http://arxiv.org/abs/2108.08356](Universal Cross-Domain Retrieval: Generalizing across Classes and Domains) | [http://iccv2021.thecvf.com/](ICCV 2021)
+[Universal Cross-Domain Retrieval: Generalizing across Classes and Domains](http://arxiv.org/abs/2108.08356) | [ICCV 2021](http://iccv2021.thecvf.com/)
 
 <p align="center">
 <img src="fig_proposed.jpg" style="zoom:38%;"/>
@@ -41,8 +41,8 @@ If this code was helpful for your research, consider citing:
 
 Several parts of our code have been borrowed from the following repositories:
 
-- [https://github.com/AnjanDutta/sem-pcyc](SEM-PCYC, CVPR'19)
-- [https://github.com/sounakdey/doodle2search](Doodle to Search, CVPR'19)
-- [https://github.com/qliu24/SAKE](SAKE, ICCV'19)
-- [https://github.com/mancinimassimiliano/CuMix](CuMix, ECCV'20)
-- [https://github.com/emma-sjwang/EISNet](EISNet, ECCV'20)
+- [SEM-PCYC, CVPR'19](https://github.com/AnjanDutta/sem-pcyc)
+- [Doodle to Search, CVPR'19](https://github.com/sounakdey/doodle2search)
+- [SAKE, ICCV'19](https://github.com/qliu24/SAKE)
+- [CuMix, ECCV'20](https://github.com/mancinimassimiliano/CuMix)
+- [EISNet, ECCV'20](https://github.com/emma-sjwang/EISNet)
