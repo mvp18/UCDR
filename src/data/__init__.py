@@ -1,0 +1,1 @@
+_BASE_PATH = '/home/soumava/UCDR/src/data'
