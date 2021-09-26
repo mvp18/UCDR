@@ -11,7 +11,7 @@ class Options:
         parser = argparse.ArgumentParser(description='Doodle2Search for ZS-SBIR')
         
         parser.add_argument('-root', '--root_path', default='/data/soumava/datasets/', type=str)
-        parser.add_argument('-path_cp', '--checkpoint_path', default='/data/soumava/saved_models/Base_NW/', type=str)
+        parser.add_argument('-path_cp', '--checkpoint_path', default='/data/soumava/saved_models/doodle2search/', type=str)
         parser.add_argument('-resume', '--resume_dict', default=None, type=str, help='checkpoint file to resume training from')
 
         parser.add_argument('-data', '--dataset', default='DomainNet', choices=['Sketchy', 'DomainNet'])

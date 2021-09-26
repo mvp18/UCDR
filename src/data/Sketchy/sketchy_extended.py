@@ -8,8 +8,8 @@ def create_trvalte_splits(args):
     path_sk = os.path.join(args.root_path, 'Sketchy', 'sketch')
     path_im = os.path.join(args.root_path, 'Sketchy', 'extended_photo')
 
-    tr_classes, va_classes, te_classes, splits_sk = trvalte_per_domain(args, path_sk, is_eccv_split=bool(args.is_eccv_split))
-    _, _, _, splits_im = trvalte_per_domain(args, path_im, is_eccv_split=bool(args.is_eccv_split))
+    tr_classes, va_classes, te_classes, cid_mask, splits_sk = trvalte_per_domain(args, path_sk, is_eccv_split=bool(args.is_eccv_split))
+    _, _, _, _, splits_im = trvalte_per_domain(args, path_im, is_eccv_split=bool(args.is_eccv_split))
 
     with open(os.path.join(_BASE_PATH, 'Sketchy', 'glove'+str(args.semantic_emb_size)+'.pkl'), 'rb') as f:
         semantic_vec = pickle.load(f)
@@ -28,7 +28,8 @@ def create_trvalte_splits(args):
     # print('#Tr Sketches:{}, #Tr Images:{}'.format(len(splits_sk['tr']), len(splits_im['tr'])))
     # print('#Te Sketches:{}, #Te Images:{}'.format(len(splits_sk['te']), len(splits_im['te'])))
 
-    return {'tr_classes':tr_classes, 'va_classes':va_classes, 'te_classes':te_classes, 'semantic_vec':semantic_vec, 'splits':splits}
+    return {'tr_classes':tr_classes, 'va_classes':va_classes, 'te_classes':te_classes, 'semantic_vec':semantic_vec, 'cid_mask':cid_mask, 
+            'splits':splits}
 
 
 def trvalte_per_domain(args, datapath, is_eccv_split=True):
@@ -42,9 +43,15 @@ def trvalte_per_domain(args, datapath, is_eccv_split=True):
         with open(os.path.join(_BASE_PATH, 'Sketchy/test_classes_eccv_2018.txt', 'r')) as fp:
         # with open('test_classes_eccv_2018.txt', 'r') as fp:
             te_classes = fp.read().splitlines()
+
+        with open(os.path.join(_BASE_PATH, 'Sketchy/cid_mask_eccv_split.pkl'), 'rb') as f:
+            cid_mask = pickle.load(f)
     else:
         with open(os.path.join(_BASE_PATH, 'Sketchy/test_classes_random_split.txt', 'r')) as fp:
             te_classes = fp.read().splitlines()
+
+        with open(os.path.join(_BASE_PATH, 'Sketchy/cid_mask_random_split.pkl'), 'rb') as f:
+            cid_mask = pickle.load(f)
 
     np.random.seed(0)
     trval_classes = np.setdiff1d(classes, te_classes)
@@ -72,4 +79,4 @@ def trvalte_per_domain(args, datapath, is_eccv_split=True):
     splits['va'] = fls_va
     splits['te'] = fls_te
 
-    return tr_classes, va_classes, te_classes, splits
+    return tr_classes, va_classes, te_classes, cid_mask, splits

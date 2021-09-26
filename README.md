@@ -24,6 +24,14 @@ Check `downloads` folder for scripts. Change path_dataset in `download_sketchy.s
 
 Download from [here](https://drive.google.com/drive/folders/1v-ryaykcviyi7d4IdbtRZ0YuUg9L12_b?usp=sharing).
 
+#### Reproducing our Results
+
+Check `reproduce_runs.sh` per folder in `src/algos`.
+
+#### TODOs
+
+- [ ] Add trainer and test files for SAKE, Doodle2Search, Base NW, EISNet, CuMix
+
 #### 🎓 Cite
 
 If this code was helpful for your research, consider citing:
@@ -39,7 +47,7 @@ If this code was helpful for your research, consider citing:
 
 #### 🙏 Acknowledgements
 
-Several parts of our code have been borrowed from the following repositories:
+Parts of our code have been borrowed from the following repositories:
 
 - [SEM-PCYC, CVPR'19](https://github.com/AnjanDutta/sem-pcyc)
 - [Doodle to Search, CVPR'19](https://github.com/sounakdey/doodle2search)

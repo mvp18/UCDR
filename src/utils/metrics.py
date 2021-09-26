@@ -9,9 +9,6 @@ from joblib import Parallel, delayed
 from scipy.spatial.distance import cdist
 from sklearn.metrics import average_precision_score
 
-# user defined
-from utils import itq
-
 
 def prec(actual, predicted, k):
     
@@ -72,7 +69,7 @@ def apsak(sim, str_sim, k=None):
     return aps_
 
 
-def compute_retrieval_metrics(acc_sk_em, acc_cls_sk, acc_im_em, acc_cls_im, mode):
+def compute_retrieval_metrics(acc_sk_em, acc_cls_sk, acc_im_em, acc_cls_im):
 
     print('\nComputing evaluation metrics...', end='')
 
